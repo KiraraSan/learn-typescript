@@ -38,14 +38,99 @@
 // calculateTax(10_000);
 
 /* objects */
-let employee: {
-    readonly id: number,
-    name: string
-    retire: (date: Date) => void
-} = { 
-    id: 1, 
-    name: 'Alex'
-    retire: (date: Date) => {
-        console.log(date);
-    } 
+// let employee: {
+//     readonly id: number,
+//     name: string
+//     retire: (date: Date) => void
+// } = { 
+//     id: 1, 
+//     name: 'Alex',
+//     retire: (date: Date) => {
+//         console.log(date);
+//     } 
+// };
+
+/* ============================================= */
+/* Advanced Types */
+
+/* type aliases */
+// type Employee = {
+//     readonly id: number,
+//     name: string
+//     retire: (date: Date) => void
+// }
+
+// let employee: Employee = { 
+//     id: 1, 
+//     name: 'Alex',
+//     retire: (date: Date) => {
+//         console.log(date);
+//     } 
+// };
+
+/* Union Type */
+// function kg_to_lbs(weight: number | string): number {
+//     // Narrowing
+//     if (typeof weight === 'number') 
+//         return weight * 2.2;
+//     else 
+//         return parseInt(weight) * 2.2;
+// }
+
+// kg_to_lbs(10);
+// kg_to_lbs('10 kg');
+
+/* intersection types */
+// type Draggable = {
+//     drag: () => void
+// };
+
+// type Resizeable = {
+//     resize: () => void
+// };
+
+// type UIWidget = Draggable & Resizeable;
+
+// let textBox: UIWidget = {
+//     drag: () => {},
+//     resize: () => {}
+// }
+
+/* literal types */
+// Literal (exact, spesific)
+// type Quantity = 50 | 100;
+// let quantity: Quantity = 100;
+
+// type Metric = 'cm' | 'inch';
+
+/* nullable types */
+// function greet(name: string | null | undefined) {
+//     if (name)
+//         console.log(name.toUpperCase());
+//     else   
+//         console.log('Hola!');
+// }
+
+// greet(undefined);
+
+/* optional chaining */
+type Customer = {
+    birthday?: Date
 };
+
+function get_customer(id: number): Customer | null | undefined {
+    return id === 0 ? null : { birthday: new Date() };
+}
+
+let customer = get_customer(1);
+// if (customer !== null && customer !== undefined)
+// Optional property access operator
+console.log(customer?.birthday?.getFullYear());
+
+// Optional element access operator
+// customers?.[0]
+
+// Optional call 
+let log: any = null;
+log?.('a');
+
