@@ -114,23 +114,62 @@
 // greet(undefined);
 
 /* optional chaining */
-type Customer = {
-    birthday?: Date
-};
+// type Customer = {
+//     birthday?: Date
+// };
 
-function get_customer(id: number): Customer | null | undefined {
-    return id === 0 ? null : { birthday: new Date() };
-}
+// function get_customer(id: number): Customer | null | undefined {
+//     return id === 0 ? null : { birthday: new Date() };
+// }
 
-let customer = get_customer(1);
-// if (customer !== null && customer !== undefined)
-// Optional property access operator
-console.log(customer?.birthday?.getFullYear());
+// let customer = get_customer(1);
+// // if (customer !== null && customer !== undefined)
+// // Optional property access operator
+// console.log(customer?.birthday?.getFullYear());
 
-// Optional element access operator
-// customers?.[0]
+// // Optional element access operator
+// // customers?.[0]
 
-// Optional call 
-let log: any = null;
-log?.('a');
+// // Optional call 
+// let log: any = null;
+// log?.('a');
+
+/* =============================== */
+/* ============= NEW ============= */
+/* =============================== */
+
+/* string */
+// let nama: string = 'Alex';
+// nama = 'String'; 
+
+/* number */
+// let umur: number;
+// umur = 50;
+// umur = 13;
+
+/* boolean */
+// let isMarried: boolean;
+// isMarried = true;
+// isMarried = false;
+
+/* any */
+// let heroes: any = 'Me';
+// heroes = 20;
+// heroes = 'a';
+// heroes = [];
+// heroes = {};
+// heroes = true;
+// heroes = false;
+
+/* array */
+// let array: number[] = [1, 2, 3];
+// array = [1, 2, 3];
+
+// let array2: string[];
+// array2 = ['string', 'string'];
+
+// let array3: any[];
+// array3 = [1, '2', true, {}];
+
+
 
